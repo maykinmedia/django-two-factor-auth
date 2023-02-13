@@ -10,8 +10,8 @@ jobs:
     continue-on-error: ${{ matrix.experimental == 'true' }}
     strategy:
       matrix:
-        python-version: ['3.6', '3.7', '3.8']
-        django-version: ['2.2', '3.0', '3.1']
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+        django-version: ['3.2', '4.0', '4.1']
         variant: [normal, yubikey, custom_user]
         experimental: ['true', 'false']
         exclude:
@@ -46,7 +46,7 @@ jobs:
       - name: Generate coverage XML report
         run: coverage xml
       - name: Codecov
-        uses: codecov/codecov-action@v1.0.10
+        uses: codecov/codecov-action@v3
         env:
           PYTHON: ${{matrix.python-version}}
           DJANGO: ${{matrix.django-version}}
