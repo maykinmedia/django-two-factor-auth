@@ -7,7 +7,7 @@ from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.shortcuts import resolve_url
 from django.urls import path, reverse
 from django.utils.http import is_safe_url
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 from .models import PhoneDevice
 from .views import (
@@ -75,8 +75,8 @@ class AdminSetupView(SetupView):
         context = super(AdminSetupView, self).get_context_data(form, **kwargs)
         context.update({
             'cancel_url': reverse('admin:two_factor:profile' if is_user_verified(self.request.user) else 'admin:login'),
-            'site_header': ugettext("Enable Two-Factor Authentication"),
-            'title': ugettext("Enable Two-Factor Authentication"),
+            'site_header': gettext("Enable Two-Factor Authentication"),
+            'title': gettext("Enable Two-Factor Authentication"),
         })
         return context
 
@@ -92,8 +92,8 @@ class AdminBackupTokensView(BackupTokensView):
     def get_context_data(self, **kwargs):
         context = super(AdminBackupTokensView, self).get_context_data(**kwargs)
         context.update({
-            'site_header': ugettext("Backup Tokens"),
-            'title': ugettext("Backup Tokens"),
+            'site_header': gettext("Backup Tokens"),
+            'title': gettext("Backup Tokens"),
         })
         return context
 
@@ -107,8 +107,8 @@ class AdminProfileView(ProfileView):
     def get_context_data(self, **kwargs):
         context = super(AdminProfileView, self).get_context_data(**kwargs)
         context.update({
-            'site_header': ugettext("Account Security"),
-            'title': ugettext("Account Security"),
+            'site_header': gettext("Account Security"),
+            'title': gettext("Account Security"),
         })
         return context
 
