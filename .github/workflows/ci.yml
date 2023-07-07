@@ -10,7 +10,7 @@ jobs:
     continue-on-error: ${{ matrix.experimental == 'true' }}
     strategy:
       matrix:
-        python-version: ['3.8']
+        python-version: ['3.9']
         django-version: ['3.0']
         variant: [normal, yubikey, custom_user]
         experimental: ['true', 'false']
