@@ -11,12 +11,14 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.8', '3.9', '3.10', '3.11']
-        django-version: ['3.2', '4.1', '4.2']
+        django-version: ['3.0', 3.2', '4.1', '4.2']
         variant: [normal, yubikey, custom_user]
         experimental: ['true', 'false']
         exclude:
           - python-version: '3.11'
             django-version: '3.2'
+          - python-version: '3.11'
+            django-version: '3.0'
 
     steps:
       - uses: actions/checkout@v2
