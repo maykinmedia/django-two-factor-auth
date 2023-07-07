@@ -10,25 +10,13 @@ jobs:
     continue-on-error: ${{ matrix.experimental == 'true' }}
     strategy:
       matrix:
-        python-version: ['3.6', '3.7', '3.8']
-        django-version: ['2.2', '3.0', '3.1']
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+        django-version: ['3.2', '4.1', '4.2']
         variant: [normal, yubikey, custom_user]
         experimental: ['true', 'false']
         exclude:
-          - python-version: '3.5'
-            django-version: '3.0'
-          - python-version: '3.5'
-            django-version: '3.1'
-          - python-version: '3.5'
-            django-version: master
-          - django-version: '2.2'
-            experimental: 'true'
-          - django-version: '3.0'
-            experimental: 'true'
-          - django-version: '3.1'
-            experimental: 'true'
-          - django-version: master
-            experimental: 'false'
+          - python-version: '3.11'
+            django-version: '3.2'
 
     steps:
       - uses: actions/checkout@v2
