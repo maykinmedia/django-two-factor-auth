@@ -1,3 +1,14 @@
+----------------------------------------------------
+
+🚨 THIS FORK IS NO LONGER MAINTAINED 🚨
+
+Instead, you should be using `maykin-2fa <https://github.com/maykinmedia/maykin-2fa/>`_
+which uses the upstream library under the hood.
+
+----------------------------------------------------
+
+
+
 ================================
 Django Two-Factor Authentication
 ================================
