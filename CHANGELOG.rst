@@ -2,6 +2,14 @@
 Change history
 ==============
 
+2.0.5
+=====
+
+*September 9, 2024*
+
+* Fixed incorrect dependancy format causing pip>=24 to fail.
+
+
 2.0.4
 =====
 
